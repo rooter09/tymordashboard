@@ -1,0 +1,141 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* CyberRiskHub Dark Theme */
+    --background: 240 10% 3.9%; /* Deep dark blue/purple #0A0A1A */
+    --foreground: 0 0% 100%; /* Pure white */
+    --card: 240 10% 6%; /* Slightly lighter dark #0F0F1A */
+    --card-foreground: 0 0% 100%;
+    --popover: 240 10% 6%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 262 83% 58%; /* Purple accent #8B5CF6 */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 240 10% 8%; /* Darker secondary #14141F */
+    --secondary-foreground: 0 0% 100%;
+    --muted: 240 10% 8%;
+    --muted-foreground: 215 20% 65%; /* Light gray #A1A1AA */
+    --accent: 240 10% 8%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 240 10% 12%; /* Subtle border #1F1F2E */
+    --input: 240 10% 8%;
+    --ring: 262 83% 58%;
+    --radius: 0.75rem;
+    
+    /* Custom CyberRiskHub Colors */
+    --cyber-purple: 262 83% 58%;
+    --cyber-blue: 217 91% 60%;
+    --cyber-green: 142 76% 36%;
+    --cyber-orange: 25 95% 53%;
+    --cyber-dark: 240 10% 3.9%;
+    --cyber-card: 240 10% 6%;
+    --cyber-text: 0 0% 100%;
+    --cyber-text-muted: 215 20% 65%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    background: linear-gradient(135deg, hsl(240, 10%, 3.9%) 0%, hsl(240, 15%, 5%) 50%, hsl(240, 10%, 3.9%) 100%);
+    min-height: 100vh;
+  }
+}
+
+@layer components {
+  .gradient-bg {
+    background: 
+      radial-gradient(ellipse at top, hsl(240, 15%, 6%) 0%, transparent 50%),
+      radial-gradient(ellipse at bottom-left, hsl(262, 20%, 8%) 0%, transparent 50%),
+      radial-gradient(ellipse at bottom-right, hsl(240, 10%, 4%) 0%, transparent 50%),
+      linear-gradient(135deg, hsl(240, 10%, 3.9%) 0%, hsl(240, 15%, 5%) 50%, hsl(240, 10%, 3.9%) 100%);
+    position: relative;
+  }
+  
+  .gradient-bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+      radial-gradient(circle at 20% 20%, rgba(139, 92, 246, 0.03) 0%, transparent 50%),
+      radial-gradient(circle at 80% 80%, rgba(59, 130, 246, 0.03) 0%, transparent 50%),
+      radial-gradient(circle at 40% 60%, rgba(139, 92, 246, 0.02) 0%, transparent 50%);
+    pointer-events: none;
+  }
+  
+  .card-gradient {
+    background: 
+      linear-gradient(145deg, 
+        rgba(15, 15, 26, 0.9) 0%, 
+        rgba(20, 20, 35, 0.8) 50%, 
+        rgba(15, 15, 26, 0.9) 100%
+      );
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 
+      0 8px 32px rgba(0, 0, 0, 0.3),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1),
+      inset 0 -1px 0 rgba(0, 0, 0, 0.2);
+  }
+  
+  .glass-effect {
+    background: rgba(15, 15, 26, 0.7);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 
+      0 8px 32px rgba(0, 0, 0, 0.2),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  }
+  
+  .card-hover {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .card-hover:hover {
+    transform: translateY(-2px);
+    box-shadow: 
+      0 20px 40px rgba(0, 0, 0, 0.4),
+      0 8px 32px rgba(139, 92, 246, 0.1),
+      inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  }
+  
+  .button-glow {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .button-glow::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+  }
+  
+  .button-glow:hover::before {
+    left: 100%;
+  }
+  
+  .text-shadow {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+  
+  .border-glow {
+    border: 1px solid rgba(139, 92, 246, 0.3);
+    box-shadow: 0 0 20px rgba(139, 92, 246, 0.1);
+  }
+}
+
