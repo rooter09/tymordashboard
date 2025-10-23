@@ -800,8 +800,8 @@ In Vercel dashboard:
 
 In Vercel, add:
 ```env
-MONGODB_URI=mongodb+srv://tymor_db_user:3VUctauSWqAjH8Vp@dashboard.tagiab0.mongodb.net/tymor-dashboard?retryWrites=true&w=majority
-NEXTAUTH_SECRET=BkqTbgTdak8rHPhltV8n/uN04jWYa4/ARaX+WRMoOJ8=
+MONGODB_URI=mongodb+srv:
+NEXTAUTH_SECRET=Bk....
 NEXTAUTH_URL=https://dashboard.tymortech.com
 NEXT_PUBLIC_SITE_URL=https://dashboard.tymortech.com
 NEXT_PUBLIC_MAIN_SITE=https://tymortech.com
