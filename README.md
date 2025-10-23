@@ -2,7 +2,7 @@
 
 A comprehensive Role-Based Access Control (RBAC) dashboard for managing the Tymor Technologies website. Serves as a headless CMS at `dashboard.tymortech.com` providing content via REST APIs to `tymortech.com`.
 
-## 🚀 Quick Start
+## Quick Start
 
 ```bash
 # Install dependencies
@@ -15,7 +15,7 @@ npm run dev
 Access dashboard at: **http://localhost:3000**
 
 
-## 🎯 Key Features
+## Key Features
 
 - **Headless CMS**: REST APIs for blogs and pages
 - **Role-Based Access**: Super Admin & Content Admin roles
@@ -25,7 +25,7 @@ Access dashboard at: **http://localhost:3000**
 - **Activity Logging**: Complete audit trail
 - **Protected User System**: Root admin cannot be deleted
 
-## 📡 Public API Endpoints
+## Public API Endpoints
 
 ```javascript
 // Blogs
@@ -40,7 +40,7 @@ GET  /api/public/pages/{slug}             // Single page
 GET  /api/public/navigation               // Menu items
 ```
 
-## 💻 Tech Stack
+## Tech Stack
 
 - **Framework**: Next.js 14 + TypeScript
 - **Database**: MongoDB Atlas
@@ -48,7 +48,7 @@ GET  /api/public/navigation               // Menu items
 - **UI**: Radix UI + Tailwind CSS
 - **Forms**: React Hook Form + Zod
 
-## 📚 Documentation
+## Documentation
 
 - **ALL_DATA.md** - Complete project documentation
 - **INTEGRATION.md** - Integration guide for tymortech-re-main
@@ -58,7 +58,7 @@ GET  /api/public/navigation               // Menu items
 
 See **ALL_DATA.md** for complete deployment instructions.
 
-## 📦 Environment Variables
+## Environment Variables
 
 ```env
 MONGODB_URI=mongodb+srv://...
@@ -67,11 +67,11 @@ NEXTAUTH_URL=https://dashboard.tymortech.com
 NEXT_PUBLIC_MAIN_SITE=https://tymortech.com
 ```
 
-## 🔗 Links
+## Links
 
 - Dashboard: https://dashboard.tymortech.com
 - Main Site: https://tymortech.com
 
 ---
 
-Built with ❤️ by Tymor Technologies
+Built with love by Tymor Technologies

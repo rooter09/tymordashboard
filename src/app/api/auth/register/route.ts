@@ -2,6 +2,8 @@ import { NextRequest, NextResponse } from 'next/server';
 import bcrypt from 'bcryptjs';
 import connectDB from '@/lib/mongodb';
 import User from '@/models/User';
+import ActivityLog from '@/models/ActivityLog';
+import { createSystemNotification } from '@/lib/notifications';
 
 export async function POST(req: NextRequest) {
   try {
@@ -37,6 +39,23 @@ export async function POST(req: NextRequest) {
       role: role || 'content_admin',
     });
 
+    // Log activity (self-registration)
+    await ActivityLog.create({
+      userId: user._id,
+      action: 'Registered',
+      entityType: 'user',
+      entityId: user._id,
+      details: `User registered: ${user.name} (${user.email})`,
+    });
+
+    // Create welcome notification
+    await createSystemNotification(
+      user._id,
+      'Welcome to Tymor Dashboard!',
+      `Hello ${user.name}! Welcome to the Tymor Dashboard. Your account has been successfully created and you can now start managing your content.`,
+      'success'
+    );
+
     return NextResponse.json(
       {
         message: 'User created successfully',
@@ -50,7 +69,6 @@ export async function POST(req: NextRequest) {
       { status: 201 }
     );
   } catch (error: any) {
-    console.error('Registration error:', error);
     return NextResponse.json(
       { error: 'Internal server error' },
       { status: 500 }

@@ -6,7 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "db:verify": "node scripts/verify-tymor-database.js",
+    "db:migrate": "node scripts/migrate-to-tymor-dashboard.js",
+    "db:final": "node scripts/final-verification.js"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.3.4",

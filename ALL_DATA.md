@@ -7,7 +7,7 @@
 
 ---
 
-## 📋 Table of Contents
+## Table of Contents
 
 1. [Overview](#overview)
 2. [Architecture](#architecture)
@@ -106,7 +106,7 @@ The Tymor Dashboard is a production-ready headless CMS built specifically for Ty
 
 ## Features
 
-### 🔐 Authentication & Authorization
+### Authentication & Authorization
 - **NextAuth.js** integration with credentials provider
 - **JWT-based sessions** (30-day expiration)
 - **bcrypt password hashing** (10 salt rounds)
@@ -114,64 +114,64 @@ The Tymor Dashboard is a production-ready headless CMS built specifically for Ty
 - **Protected routes** with middleware
 - **Secure API endpoints**
 
-### 📝 Content Management
+### Content Management
 
 #### Blog Management
-- ✅ Create, edit, delete blog posts
-- ✅ Rich text content support (HTML)
-- ✅ Categories and tags system
-- ✅ Featured images
-- ✅ Author attribution
-- ✅ Draft/Published/Archived status
-- ✅ View counter
-- ✅ SEO optimization (meta tags, OG tags)
-- ✅ Custom URL slugs
-- ✅ Publication timestamps
+- Create, edit, delete blog posts
+- Rich text content support (HTML)
+- Categories and tags system
+- Featured images
+- Author attribution
+- Draft/Published/Archived status
+- View counter
+- SEO optimization (meta tags, OG tags)
+- Custom URL slugs
+- Publication timestamps
 
 #### Page Management
-- ✅ Create dynamic pages
-- ✅ Full HTML content support
-- ✅ SEO metadata
-- ✅ Featured images
-- ✅ Status management
-- ✅ Custom slugs
-- ✅ Excerpt/summary
+- Create dynamic pages
+- Full HTML content support
+- SEO metadata
+- Featured images
+- Status management
+- Custom slugs
+- Excerpt/summary
 
-### 👥 User Management (Super Admin Only)
-- ✅ Invite new users
-- ✅ Assign roles (Super Admin / Content Admin)
-- ✅ View all users
-- ✅ Delete users
-- ✅ Track invitations
-- ✅ Active/inactive status
-- ✅ **Protected user system** (prevent deletion of root admin)
+### User Management (Super Admin Only)
+- Invite new users
+- Assign roles (Super Admin / Content Admin)
+- View all users
+- Delete users
+- Track invitations
+- Active/inactive status
+- **Protected user system** (prevent deletion of root admin)
 
-### 📊 Analytics Dashboard
-- ✅ Page view tracking
-- ✅ Time-based filtering (7/30/90 days)
-- ✅ Top pages by views
-- ✅ Traffic sources (referrers)
-- ✅ Device breakdown (mobile/desktop)
-- ✅ Browser statistics
-- ✅ Geographic data (countries)
-- ✅ Real-time data collection
+### Analytics Dashboard
+- Page view tracking
+- Time-based filtering (7/30/90 days)
+- Top pages by views
+- Traffic sources (referrers)
+- Device breakdown (mobile/desktop)
+- Browser statistics
+- Geographic data (countries)
+- Real-time data collection
 
-### 📋 Activity Logging
-- ✅ Complete audit trail
-- ✅ Track all CRUD operations
-- ✅ User attribution
-- ✅ Timestamps
-- ✅ Entity type filtering
-- ✅ Action details
+### Activity Logging
+- Complete audit trail
+- Track all CRUD operations
+- User attribution
+- Timestamps
+- Entity type filtering
+- Action details
 
-### 🌐 Public API (Headless CMS)
-- ✅ REST API endpoints for blogs
-- ✅ REST API endpoints for pages
-- ✅ Navigation menu API
-- ✅ CORS configured for tymortech.com
-- ✅ Pagination support
-- ✅ Search and filtering
-- ✅ No authentication required
+### Public API (Headless CMS)
+- REST API endpoints for blogs
+- REST API endpoints for pages
+- Navigation menu API
+- CORS configured for tymortech.com
+- Pagination support
+- Search and filtering
+- No authentication required
 
 ---
 
@@ -183,21 +183,21 @@ The Tymor Dashboard is a production-ready headless CMS built specifically for Ty
 
 | Feature | Permission |
 |---------|-----------|
-| Create pages | ✅ |
-| Edit own pages | ✅ |
-| Edit others' pages | ✅ |
-| Delete own pages | ✅ |
-| Delete others' pages | ✅ |
-| Create blogs | ✅ |
-| Edit own blogs | ✅ |
-| Edit others' blogs | ✅ |
-| Delete own blogs | ✅ |
-| Delete others' blogs | ✅ |
-| View analytics | ✅ |
-| View activity logs | ✅ (all) |
-| Invite users | ✅ |
-| Manage users | ✅ |
-| Delete users | ✅ |
+| Create pages | |
+| Edit own pages | |
+| Edit others' pages | |
+| Delete own pages | |
+| Delete others' pages | |
+| Create blogs | |
+| Edit own blogs | |
+| Edit others' blogs | |
+| Delete own blogs | |
+| Delete others' blogs | |
+| View analytics | |
+| View activity logs | (all) |
+| Invite users | |
+| Manage users | |
+| Delete users | |
 
 ### Content Admin
 
@@ -205,21 +205,21 @@ The Tymor Dashboard is a production-ready headless CMS built specifically for Ty
 
 | Feature | Permission |
 |---------|-----------|
-| Create pages | ✅ |
-| Edit own pages | ✅ |
-| Edit others' pages | ❌ |
-| Delete own pages | ✅ |
-| Delete others' pages | ❌ |
-| Create blogs | ✅ |
-| Edit own blogs | ✅ |
-| Edit others' blogs | ❌ |
-| Delete own blogs | ✅ |
-| Delete others' blogs | ❌ |
-| View analytics | ✅ |
-| View activity logs | ✅ (filtered) |
-| Invite users | ❌ |
-| Manage users | ❌ |
-| Delete users | ❌ |
+| Create pages | |
+| Edit own pages | |
+| Edit others' pages | |
+| Delete own pages | |
+| Delete others' pages | |
+| Create blogs | |
+| Edit own blogs | |
+| Edit others' blogs | |
+| Delete own blogs | |
+| Delete others' blogs | |
+| View analytics | |
+| View activity logs | (filtered) |
+| Invite users | |
+| Manage users | |
+| Delete users | |
 
 ---
 
@@ -599,18 +599,18 @@ The protected user system ensures that the root administrator account cannot be 
 ### Protection Features
 
 #### Cannot Be Deleted
-- ❌ Via admin dashboard
-- ❌ Via API calls
-- ❌ By any super admin
-- ✅ Only via direct database access
+- Via admin dashboard
+- Via API calls
+- By any super admin
+- Only via direct database access
 
 #### Limited Modifications
-- ✅ Password can be changed
-- ✅ Name can be updated
-- ❌ Email cannot be changed
-- ❌ Role cannot be changed
-- ❌ Account cannot be deactivated
-- ❌ Protection cannot be removed via API
+- Password can be changed
+- Name can be updated
+- Email cannot be changed
+- Role cannot be changed
+- Account cannot be deactivated
+- Protection cannot be removed via API
 
 ### Implementation
 

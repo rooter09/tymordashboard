@@ -36,7 +36,6 @@ export async function GET(
       }
     });
   } catch (error: any) {
-    console.error('Error fetching page:', error);
     return NextResponse.json(
       { success: false, error: 'Failed to fetch page' },
       { status: 500 }

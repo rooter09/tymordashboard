@@ -3,6 +3,8 @@ import { getServerSession } from 'next-auth';
 import { authOptions } from '@/lib/auth';
 import connectDB from '@/lib/mongodb';
 import User from '@/models/User';
+import ActivityLog from '@/models/ActivityLog';
+import { createSystemNotification } from '@/lib/notifications';
 import bcrypt from 'bcryptjs';
 
 // GET all users (Super Admin only)
@@ -23,7 +25,6 @@ export async function GET(req: NextRequest) {
 
     return NextResponse.json({ users }, { status: 200 });
   } catch (error: any) {
-    console.error('Error fetching users:', error);
     return NextResponse.json(
       { error: 'Internal server error' },
       { status: 500 }
@@ -72,6 +73,31 @@ export async function POST(req: NextRequest) {
       invitedBy: session.user.id,
     });
 
+    // Log activity
+    await ActivityLog.create({
+      userId: session.user.id,
+      action: 'Created user',
+      entityType: 'user',
+      entityId: user._id,
+      details: `Created user: ${user.name} (${user.email}) with role: ${user.role}`,
+    });
+
+    // Create notification for the new user
+    await createSystemNotification(
+      user._id,
+      'Welcome to Tymor Dashboard!',
+      `Hello ${user.name}! Your account has been created successfully. You can now access the dashboard with your ${user.role} privileges.`,
+      'success'
+    );
+
+    // Create notification for the admin who created the user
+    await createSystemNotification(
+      session.user.id,
+      'User Created Successfully',
+      `You have successfully created a new user: ${user.name} (${user.email}) with ${user.role} role.`,
+      'success'
+    );
+
     return NextResponse.json(
       {
         message: 'User invited successfully',
@@ -85,7 +111,6 @@ export async function POST(req: NextRequest) {
       { status: 201 }
     );
   } catch (error: any) {
-    console.error('Error inviting user:', error);
     return NextResponse.json(
       { error: 'Internal server error' },
       { status: 500 }

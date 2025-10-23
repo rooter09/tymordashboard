@@ -28,7 +28,6 @@ export async function GET(req: NextRequest) {
       }
     });
   } catch (error: any) {
-    console.error('Error fetching public pages:', error);
     return NextResponse.json(
       { success: false, error: 'Failed to fetch pages' },
       { status: 500 }

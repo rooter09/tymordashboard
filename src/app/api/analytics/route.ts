@@ -95,7 +95,6 @@ export async function GET(req: NextRequest) {
       countryBreakdown,
     });
   } catch (error: any) {
-    console.error('Error fetching analytics:', error);
     return NextResponse.json(
       { error: 'Internal server error' },
       { status: 500 }
@@ -133,7 +132,6 @@ export async function POST(req: NextRequest) {
 
     return NextResponse.json({ success: true }, { status: 201 });
   } catch (error: any) {
-    console.error('Error tracking analytics:', error);
     return NextResponse.json(
       { error: 'Internal server error' },
       { status: 500 }

@@ -13,22 +13,17 @@ export const authOptions: NextAuthOptions = {
         password: { label: 'Password', type: 'password' },
       },
       async authorize(credentials) {
-        console.log('🔍 Auth attempt:', { email: credentials?.email });
         
         if (!credentials?.email || !credentials?.password) {
-          console.log('❌ Missing credentials');
           throw new Error('Invalid credentials');
         }
 
         try {
           await connectDB();
-          console.log('✅ Database connected');
           
           const user = await User.findOne({ email: credentials.email });
-          console.log('👤 User found:', user ? 'Yes' : 'No');
           
           if (!user || !user.isActive) {
-            console.log('❌ User not found or inactive:', { userExists: !!user, isActive: user?.isActive });
             throw new Error('Invalid credentials');
           }
 
@@ -36,10 +31,8 @@ export const authOptions: NextAuthOptions = {
             credentials.password,
             user.password
           );
-          console.log('🔐 Password valid:', isPasswordValid);
 
           if (!isPasswordValid) {
-            console.log('❌ Invalid password');
             throw new Error('Invalid credentials');
           }
 
@@ -51,10 +44,8 @@ export const authOptions: NextAuthOptions = {
             avatar: user.avatar,
           };
           
-          console.log('✅ Auth successful:', result);
           return result;
         } catch (error) {
-          console.error('❌ Auth error:', error);
           throw error;
         }
       },

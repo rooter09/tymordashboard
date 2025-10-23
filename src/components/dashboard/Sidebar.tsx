@@ -54,8 +54,8 @@ export default function Sidebar() {
   });
   
   return (
-    <aside className="w-64 card-gradient text-white flex-shrink-0 flex flex-col h-screen border-r border-border/20 backdrop-blur-sm">
-      <div className="p-6 border-b border-border/20">
+    <aside className="w-64 card-gradient text-white flex-shrink-0 flex flex-col h-screen border-r border-border/30 backdrop-blur-sm">
+      <div className="p-6 border-b border-border/30">
         <div className="flex items-center gap-3">
           <img 
             src="/logo.png" 
@@ -77,7 +77,7 @@ export default function Sidebar() {
               href={item.href}
               className={`flex items-center gap-3 px-4 py-3 rounded-xl mb-2 transition-all duration-200 group ${
                 isActive 
-                  ? 'bg-primary/20 text-primary border border-primary/30 shadow-lg shadow-primary/10' 
+                  ? 'bg-primary/20 text-primary border border-primary/40 shadow-lg shadow-primary/15' 
                   : 'hover:bg-secondary/50 text-muted-foreground hover:text-white'
               }`}
             >
@@ -90,8 +90,8 @@ export default function Sidebar() {
         })}
       </nav>
 
-      <div className="p-4 border-t border-border/20">
-        <div className="flex items-center gap-3 mb-4 p-3 rounded-xl bg-secondary/30">
+      <div className="p-4 border-t border-border/30">
+        <div className="flex items-center gap-3 mb-4 p-3 rounded-xl bg-secondary/40">
           <div className="w-10 h-10 bg-gradient-to-br from-primary to-primary/80 rounded-xl flex items-center justify-center">
             <span className="text-white font-semibold text-sm">
               {session?.user?.name?.charAt(0).toUpperCase()}

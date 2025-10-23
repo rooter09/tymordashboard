@@ -4,7 +4,7 @@ This guide explains how to integrate the Tymor Dashboard CMS with the **tymortec
 
 ---
 
-## 🎯 Overview
+## Overview
 
 Your dashboard at `dashboard.tymortech.com` will serve as a headless CMS that provides:
 - **Blog Management**: Create, edit, and publish blog posts
@@ -22,7 +22,7 @@ MongoDB Atlas (Database)
 
 ---
 
-## 🔗 API Endpoints
+## API Endpoints
 
 ### Base URL
 - **Development**: `http://localhost:3000`
@@ -56,7 +56,7 @@ GET /api/public/pages/{slug}
 
 ---
 
-## 📝 API Response Formats
+## API Response Formats
 
 ### Blog List Response
 
@@ -149,7 +149,7 @@ GET /api/public/pages/{slug}
 
 ---
 
-## 💻 Integration Code Examples
+## Integration Code Examples
 
 ### 1. Blog Listing Page
 
@@ -586,7 +586,7 @@ document.addEventListener('DOMContentLoaded', () => loadLatestBlogs(3));
 
 ---
 
-## 🎨 CSS Styling Examples
+## CSS Styling Examples
 
 ```css
 /* Blog Grid */
@@ -732,7 +732,7 @@ document.addEventListener('DOMContentLoaded', () => loadLatestBlogs(3));
 
 ---
 
-## 🔐 Dashboard Access & Content Management
+## Dashboard Access & Content Management
 
 ### Login to Dashboard
 
@@ -772,7 +772,7 @@ document.addEventListener('DOMContentLoaded', () => loadLatestBlogs(3));
 
 ---
 
-## 🚀 Deployment Steps
+## Deployment Steps
 
 ### 1. Deploy Dashboard to Vercel
 
@@ -810,7 +810,7 @@ NEXT_PUBLIC_DASHBOARD_URL=https://dashboard.tymortech.com
 
 ---
 
-## 🧪 Testing
+## Testing
 
 ### Test APIs Locally
 
@@ -836,7 +836,7 @@ This shows a working example of blog integration.
 
 ---
 
-## ❓ Troubleshooting
+## Troubleshooting
 
 ### CORS Errors
 
@@ -860,7 +860,7 @@ If you get CORS errors:
 
 ---
 
-## 📊 Content Best Practices
+## Content Best Practices
 
 ### Blog Posts
 
@@ -882,7 +882,7 @@ If you get CORS errors:
 
 ---
 
-## ✅ Quick Reference
+## Quick Reference
 
 ### API Endpoints Quick List
 
@@ -920,17 +920,17 @@ fetch('https://dashboard.tymortech.com/api/public/pages/managed-it-services')
 
 ---
 
-## 🎯 Summary
+## Summary
 
 **What You Can Do:**
 
-✅ Manage all blog content from one dashboard  
-✅ Create and edit dynamic pages  
-✅ SEO-optimized content with custom meta tags  
-✅ Real-time content updates  
-✅ Blog search and filtering  
-✅ View analytics and metrics  
-✅ No database needed on tymortech.com  
+- Manage all blog content from one dashboard  
+- Create and edit dynamic pages  
+- SEO-optimized content with custom meta tags  
+- Real-time content updates  
+- Blog search and filtering  
+- View analytics and metrics  
+- No database needed on tymortech.com  
 
 **The Workflow:**
 

@@ -36,7 +36,6 @@ export async function GET(req: NextRequest) {
 
     return NextResponse.json({ data: logs }, { status: 200 });
   } catch (error: any) {
-    console.error('Error fetching activity logs:', error);
     return NextResponse.json(
       { error: 'Internal server error' },
       { status: 500 }

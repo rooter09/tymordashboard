@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/tymor-dashboard';
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb+srv://tymor_db_user:3VUctauSWqAjH8Vp@dashboard.tagiab0.mongodb.net/tymor-dashboard?appName=Dashboard';
 
 if (!MONGODB_URI) {
   throw new Error('Please define the MONGODB_URI environment variable');
@@ -32,7 +32,6 @@ async function connectDB() {
     };
 
     cached.promise = mongoose.connect(MONGODB_URI, opts).then((mongoose) => {
-      console.log('✅ MongoDB connected successfully');
       return mongoose;
     });
   }

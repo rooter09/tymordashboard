@@ -70,7 +70,6 @@ export async function POST(req: NextRequest) {
       }
     );
   } catch (error: any) {
-    console.error('Error submitting lead:', error);
     return NextResponse.json(
       { success: false, error: 'Failed to submit lead' },
       { status: 500 }
