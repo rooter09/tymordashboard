@@ -14,11 +14,6 @@ npm run dev
 
 Access dashboard at: **http://localhost:3000**
 
-## 🔐 Default Credentials
-
-- **Email**: `hsandilya@tymortech.com`
-- **Password**: `Harsh@1232@`
-- **Role**: Super Admin (Protected - Cannot be deleted)
 
 ## 🎯 Key Features
 
@@ -58,12 +53,6 @@ GET  /api/public/navigation               // Menu items
 - **ALL_DATA.md** - Complete project documentation
 - **INTEGRATION.md** - Integration guide for tymortech-re-main
 
-## 🚀 Deployment
-
-Deploy to Vercel:
-```bash
-vercel --prod
-```
 
 **Domain**: `dashboard.tymortech.com`
 
